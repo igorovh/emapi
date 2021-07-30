@@ -1,0 +1,9 @@
+{
+  "port": 5021,
+  "twitchToken": "gj8203g2480g248jg28g4",
+  "redis": {
+    "host": "",
+    "port": 6379,
+    "password": ""
+  }
+}
