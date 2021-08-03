@@ -1,6 +1,3 @@
-### Still in development
-Public api is not working right now.
-
 # emapi
 
 Simple caching service to connect all emotes sites and parse them into one type.
@@ -51,7 +48,7 @@ Some `urls` can be `undefined`.
 ```
 
 #### Channel emotes
-[https://emapi.vopp.top/v1/channel/[id]/[service]](https://emapi.vopp.top/v1/channel/12826/all) `(click for example)`
+[https://emapi.vopp.top/v1/channel/[id]/[service]](https://emapi.vopp.top/v1/channel/87037696/all) `(click for example)`
 ```json
 {
     "_cache": 1627334394,
