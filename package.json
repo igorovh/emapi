@@ -1,0 +1,47 @@
+{
+  "name": "emapi",
+  "version": "1.0.0",
+  "description": "Simple service to cache and access emotes from services like BTTV, FFZ, 7TV and Twitch.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --experimental-specifier-resolution=node src/server.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --colors"
+  },
+  "keywords": [
+    "twitch",
+    "bttv",
+    "ffz",
+    "7tv",
+    "emotes"
+  ],
+  "author": "animekkk",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@jest/globals": "^27.0.6",
+    "express": "^4.17.1",
+    "express-rate-limit": "^5.3.0",
+    "node-fetch": "^2.6.1",
+    "redis": "^3.1.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "jest": "^27.0.6",
+    "superagent": "^6.1.0",
+    "supertest": "^6.1.4"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "src",
+      "test"
+    ],
+    "transform": {},
+    "verbose": false
+  }
+}

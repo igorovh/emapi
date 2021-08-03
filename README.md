@@ -1,25 +1,26 @@
-## Still in development
-(not working right now)
 # emapi
 
 Simple caching service to connect all emotes sites and parse them into one type.
 To get channel emotes all you need is channel id, which you can get from Twitch API or [here](https://s.kdy.ch/twitchid/).  
 
 #### Currently available:
-* Twitch Global and Channel
+* ~~Twitch Global and Channel~~ (because of lack of time I will add this later)
 * BetterTwitchTV Global and Channel
 * FrankerFaceZ Global and Channel
 * 7TV Global and Channel
 
-In API, `all`, means **every** service, but you can also use service name like `twitch`, `bttv`, `ffz` or `7tv`.
+In API, `all`, means **every** service, but you can also use service name like ~~`twitch`~~, `bttv`, `ffz` or `7tv`.
+
+### Limits
+You can make **5 request per 1 second**.
 
 ### Emote
 We are parsing every emote from every service, so you don't have to parse them yourself.  
-Some versions of `urls` can be `undefined`.
+Some `urls` can be `undefined`.
 
 ```json
 {
-    "code": "Kappa",
+    "code": "WeirdChamp",
     "urls": {
         "1x": "url",
         "2x": "url",
@@ -32,10 +33,16 @@ Some versions of `urls` can be `undefined`.
 [https://emapi.vopp.top/v1/global/[service]](https://emapi.vopp.top/v1/global/all) `(click for example)`
 ```json
 {
-    "_next": 60000,
     "_cache": 1627334394,
     "emotes": [
-        emotes...
+        {
+            "code": "WeirdChamp",
+            "urls": {
+                "1x": "url",
+                "2x": "url",
+                "4x": "url"
+            }
+        }
     ]
 }
 ```
@@ -44,10 +51,16 @@ Some versions of `urls` can be `undefined`.
 [https://emapi.vopp.top/v1/channel/[id]/[service]](https://emapi.vopp.top/v1/channel/12826/all) `(click for example)`
 ```json
 {
-    "_next": 60000,
     "_cache": 1627334394,
     "emotes": [
-        emotes...
+        {
+            "code": "WeirdChamp",
+            "urls": {
+                "1x": "url",
+                "2x": "url",
+                "4x": "url"
+            }
+        }
     ]
 }
 ```
