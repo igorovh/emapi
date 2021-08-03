@@ -1,3 +1,6 @@
+### Still in development
+Public api is not working right now.
+
 # emapi
 
 Simple caching service to connect all emotes sites and parse them into one type.
