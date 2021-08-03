@@ -4,12 +4,14 @@ const CDN = 'https://cdn.betterttv.net/emote/{id}/{size}'
 
 export function parse(json) {
     const emotes = [];
-    json.channelEmotes.forEach(emoteJson => {
-        emotes.push(parseEmote(emoteJson));
-    });
-    json.sharedEmotes.forEach(emoteJson => {
-        emotes.push(parseEmote(emoteJson));
-    });
+    if(json && json.message !== 'user not found') {
+        json.channelEmotes.forEach(emoteJson => {
+            emotes.push(parseEmote(emoteJson));
+        });
+        json.sharedEmotes.forEach(emoteJson => {
+            emotes.push(parseEmote(emoteJson));
+        });
+    }
     return emotes;
 }
 
