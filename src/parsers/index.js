@@ -31,7 +31,7 @@ export async function parseChannel(id, service) {
         default:
             for(let name of services) {
                 if(name !== 'all') {
-                    const data = await parse(id, name);
+                    const data = await parseChannel(id, name);
                     emotes = emotes.concat(data.emotes);
                 }
             }
