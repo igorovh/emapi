@@ -4,7 +4,7 @@ const CDN = 'https://cdn.betterttv.net/emote/{id}/{size}'
 
 export function parse(json) {
     const emotes = [];
-    if(json && json.message !== 'user not found') {
+    if(json && json.status !== 404) {
         json.channelEmotes.forEach(emoteJson => {
             emotes.push(parseEmote(emoteJson));
         });

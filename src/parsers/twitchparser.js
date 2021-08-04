@@ -2,7 +2,7 @@ import { Emote } from '../emote';
 
 export function parse(json) {
     const emotes = [];
-    if(json && json.data !== undefined) {
+    if(json && json.status !== 404) {
         json.data.forEach(emoteJson => {
             const urls = {
                 '1x': emoteJson.images['url_1x'],
