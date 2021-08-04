@@ -64,3 +64,6 @@ Some `urls` can be `undefined`.
     ]
 }
 ```
+
+#### TODO
+- [ ] Create system based on `Ratelimit` headers.
