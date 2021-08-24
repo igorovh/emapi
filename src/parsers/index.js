@@ -36,9 +36,9 @@ export async function parseChannel(id, service) {
                 }
             }
     }
-    emotes = { '_cache': Date.now(), 'emotes': emotes };
+    const data = { '_cache': Date.now(), 'emotes': emotes };
     //TODO Don't save to service ALL, but just get them from other services.
-    client.hset('emotes-channel', `${id}-${service}`, JSON.stringify(emotes));
+    if(emotes.length > 1) client.hset('emotes-channel', `${id}-${service}`, JSON.stringify(data));
     return emotes;
 }
 
@@ -66,8 +66,8 @@ export async function parseGlobal(service) {
                 }
             }
     }
-    emotes = { '_cache': Date.now(), 'emotes': emotes };
+    const data = { '_cache': Date.now(), 'emotes': emotes };
     //TODO Don't save to service ALL, but just get them from other services.
-    client.hset('emotes-global', service, JSON.stringify(emotes));
+    if(emotes.length > 1) client.hset('emotes-global', service, JSON.stringify(data));
     return emotes;
 }
