@@ -14,6 +14,7 @@ export function exist(service) {
 
 export async function parseChannel(id, service) {
     let emotes = [];
+    console.info(`Parsing - ${id} - service`);
     switch(service) {
         case 'bttv':
             emotes = parseBTTV(await fetchJson(CHANNEL_BTTV.replace('{id}', id)));
