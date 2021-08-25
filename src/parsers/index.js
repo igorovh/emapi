@@ -39,7 +39,7 @@ export async function parseChannel(id, service) {
     const data = { '_cache': Date.now(), 'emotes': emotes };
     //TODO Don't save to service ALL, but just get them from other services.
     if(emotes.length > 1) client.hset('emotes-channel', `${id}-${service}`, JSON.stringify(data));
-    return emotes;
+    return data;
 }
 
 export async function parseGlobal(service) {
@@ -69,5 +69,5 @@ export async function parseGlobal(service) {
     const data = { '_cache': Date.now(), 'emotes': emotes };
     //TODO Don't save to service ALL, but just get them from other services.
     if(emotes.length > 1) client.hset('emotes-global', service, JSON.stringify(data));
-    return emotes;
+    return data;
 }
