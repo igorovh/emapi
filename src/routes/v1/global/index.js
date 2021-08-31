@@ -1,6 +1,6 @@
 import express from 'express';
-import { exist, parseGlobal as parse } from "../../../parsers";
-import { client, config } from "../../../server";
+import { exist, parseGlobal as parse } from '../../../parsers';
+import { client, config } from '../../../server';
 
 export const globalApi = express.Router();
 
