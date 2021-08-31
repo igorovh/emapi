@@ -67,3 +67,4 @@ Some `urls` can be `undefined`.
 
 #### TODO
 - [ ] Create system based on `Ratelimit` headers.
+- [ ] Create route for chaning name into id.
