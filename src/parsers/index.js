@@ -2,9 +2,10 @@ import { parse as parseBTTV, parseGlobal as parseGlobalBTTV } from './bttvparser
 import { parse as parseFFZ } from './ffzparser'
 import { parse as parse7TV } from './7tvparser'
 import { parse as parseTwitch } from './twitchparser'
-import { CHANNEL_BTTV, CHANNEL_FFZ, CHANNEL_7TV, GLOBAL_BTTV, GLOBAL_FFZ, GLOBAL_7TV } from '../constants';
+import { CHANNEL_BTTV, CHANNEL_FFZ, CHANNEL_7TV, CHANNEL_TWITCH, GLOBAL_BTTV, GLOBAL_FFZ, GLOBAL_7TV, GLOBAL_TWITCH } from '../constants';
 import { client } from '../server';
 import { fetchJson } from '../utils/fetcher'
+import { config } from '../server';
 
 const services = ['bttv', 'ffz', '7tv', 'twitch', 'all'];
 
@@ -26,8 +27,12 @@ export async function parseChannel(id, service) {
             emotes = parse7TV(await fetchJson(CHANNEL_7TV.replace('{id}', id)));
             break;
         case 'twitch':
-            //TODO Create Twitch client
-            //emotes = parseTwitch(await fetchJson(CHANNEL_7TV.replace('{id}', id)));
+            emotes = parseTwitch(await fetchJson(CHANNEL_TWITCH.replace('{id}', id), {
+                headers: {
+                    'Authorization': `Bearer ${config.twitch.token}`,
+                    'Client-Id': config.twitch.clientId
+                }
+            }));
             break;
         default:
             for(let name of services) {
@@ -56,8 +61,12 @@ export async function parseGlobal(service) {
             emotes = parse7TV(await fetchJson(GLOBAL_7TV));
             break;
         case 'twitch':
-            //TODO Create Twitch client
-            //emotes = parseTwitch(await fetchJson(CHANNEL_7TV.replace('{id}', id)));
+            emotes = parseTwitch(await fetchJson(GLOBAL_TWITCH, {
+                headers: {
+                    'Authorization': `Bearer ${config.twitch.token}`,
+                    'Client-Id': config.twitch.clientId
+                }
+            }));
             break;
         default:
             for(let name of services) {
