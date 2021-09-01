@@ -1,6 +1,6 @@
 import express from 'express';
 import { client, config } from '../../../server';
-import fetch from 'node-fetch'; 
+import { fetchJson } from '../../../utils/fetcher'; 
 
 export const nameApi = express.Router();
 
@@ -17,14 +17,12 @@ nameApi.get('/:name', async (request, response) => {
 });
 
 async function getId(name) {
-    console.log(name);
-    const data = await fetch(`https://api.twitch.tv/helix/users?login=${name}`, {
+    const json = await fetchJson(`https://api.twitch.tv/helix/users?login=${name}`, {
         headers: {
             'Authorization': `Bearer ${config.twitch.token}`,
             'Client-Id': config.twitch.clientId
         }
     });
-    const json = await data.json();
     if(json.error) return { error: 'This user does not exists.' };
     if(json.data.length < 1) return { error: 'This user does not exists.' };
     return { '_cache': Date.now(), 'id': json.data[0].id };
