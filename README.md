@@ -4,10 +4,11 @@ Simple caching service to connect all emotes sites and parse them into one type.
 To get channel emotes all you need is channel id, which you can get from Twitch API, [here](https://s.kdy.ch/twitchid/) or by using `name` route which you can see below.  
 
 #### Currently available:
-* Twitch Global and Channel
-* BetterTwitchTV Global and Channel
-* FrankerFaceZ Global and Channel
-* 7TV Global and Channel
+* Twitch global and channel emotes
+* BetterTwitchTV global and channel emotes
+* FrankerFaceZ global and channel emotes
+* 7TV global and channel emotes
+* Getting twitch id by name
 
 In API, `all`, means **every** service, but you can also use service name like `twitch`, `bttv`, `ffz` or `7tv`.
 
