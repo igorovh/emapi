@@ -1,15 +1,15 @@
 # emapi
 
 Simple caching service to connect all emotes sites and parse them into one type.
-To get channel emotes all you need is channel id, which you can get from Twitch API or [here](https://s.kdy.ch/twitchid/).  
+To get channel emotes all you need is channel id, which you can get from Twitch API, [here](https://s.kdy.ch/twitchid/) or by using `name` route which you can see below.  
 
 #### Currently available:
-* ~~Twitch Global and Channel~~ (because of lack of time I will add this later)
+* Twitch Global and Channel
 * BetterTwitchTV Global and Channel
 * FrankerFaceZ Global and Channel
 * 7TV Global and Channel
 
-In API, `all`, means **every** service, but you can also use service name like ~~`twitch`~~, `bttv`, `ffz` or `7tv`.
+In API, `all`, means **every** service, but you can also use service name like `twitch`, `bttv`, `ffz` or `7tv`.
 
 ### Limits
 You can make **5 request per 1 second**.
@@ -62,6 +62,15 @@ Some `urls` can be `undefined`.
             }
         }
     ]
+}
+```
+
+#### Name
+[https://emapi.vopp.top/v1/name/[name]](https://emapi.vopp.top/v1/name/twitch) `(click for example)`
+```json
+{
+    "_cache": 1630496500208,
+    "id": "87037696"
 }
 ```
 

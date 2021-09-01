@@ -1,6 +1,9 @@
 {
   "port": 5021,
-  "twitchToken": "gj8203g2480g248jg28g4",
+  "twitch": {
+    "token": "",
+    "clientId": ""
+  },
   "redis": {
     "host": "127.0.0.1",
     "port": 6379,
@@ -11,6 +14,7 @@
     "ffz": 300,
     "7tv": 300,
     "twitch": 3600,
-    "all": 3600
+    "all": 3600,
+    "name": 86400
   }
 }

@@ -1,6 +1,11 @@
 import express from 'express';
+<<<<<<< HEAD
 import { exist, parseGlobal as parse } from '../../../parsers';
 import { client, config } from '../../../server';
+=======
+import { exist, parseGlobal as parse } from "../../../parsers";
+import { client, config } from "../../../server";
+>>>>>>> twitch
 
 export const globalApi = express.Router();
 
