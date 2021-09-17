@@ -1,5 +1,6 @@
 import express from 'express';
 import rateLimit from 'express-rate-limit';
+import cors from 'cors';
 import { globalApi } from './routes/v1/global';
 import { channelApi } from './routes/v1/channel';
 import { nameApi } from './routes/v1/name';
@@ -12,6 +13,7 @@ const limiter = rateLimit({
     message: { error: 'Too many requests in one second.' }
 });
 
+app.use(cors());
 app.use(limiter);
 
 app.set('json spaces', 2)
