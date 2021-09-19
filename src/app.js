@@ -13,7 +13,11 @@ const limiter = rateLimit({
     message: { error: 'Too many requests in one second.' }
 });
 
-app.use(cors());
+app.use(cors({
+    origin: '*',
+    optionsSuccessStatus: 200
+}));
+
 app.use(limiter);
 
 app.set('json spaces', 2)
