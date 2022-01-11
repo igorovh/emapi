@@ -9,7 +9,6 @@ export function parse(json) {
                 '2x': emoteJson.images['url_2x'].replace('/static/', '/default/'),
                 '4x': emoteJson.images['url_4x'].replace('/static/', '/default/'),
             }
-            console.log(urls);
             emotes.push(new Emote(emoteJson.name, urls));
         });
     }
